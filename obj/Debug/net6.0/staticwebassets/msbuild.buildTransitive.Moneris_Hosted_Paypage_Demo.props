@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="..\buildMultiTargeting\Moneris_Hosted_Paypage_Demo.props" />
-</Project>
