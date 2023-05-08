@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Moneris Payment";
+
+    var monerisUrl = ViewBag.Url;
+    var monerisStoreId = ViewBag.StoreId;
+    var monerisKey = ViewBag.Key;
+    var paymentAmount = 100.00M;
+    var orderId = Guid.NewGuid();
+    var customerId = "cust_001";
+    var email = "cust_001@mail.com";
+}
+
+<div class="row col-2">
+    <button class="btn-primary btn-sm" type="button" id="btnMonerisPayment" onclick="frmPaymentMoneris.submit();">Checkout</button>
+</div>
+
+<form id="frmPaymentMoneris" method="post" action="@monerisUrl">
+    <input type="hidden" name="ps_store_id" value="@monerisStoreId" />
+    <input type="hidden" name="hpp_key" value="@monerisKey" />
+    <input type="hidden" name="charge_total" value="@paymentAmount" />
+    <input type="hidden" name="order_id" value="@orderId" />
+    <input type="hidden" name="cust_id" value="@customerId" />
+    <input type="hidden" name="email" value="@email" />
+</form>
